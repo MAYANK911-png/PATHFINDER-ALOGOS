@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pathfinding Visualizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Pathfinding Visualizer</h1>
+  </header>
+
+  <section id="controls">
+    <label for="algo-select">Algorithm:</label>
+    <select id="algo-select">
+      <option value="bfs">Breadth-First Search</option>
+      <option value="dfs">Depth-First Search</option>
+      <option value="dijkstra">Dijkstra's</option>
+      <option value="astar">A*</option>
+    </select>
+    <button id="run-btn">Run</button>
+    <button id="reset-btn">Reset</button>
+    <button id="clear-walls-btn">Clear Walls</button>
+    <label for="speed-slider">Speed:</label>
+    <input type="range" id="speed-slider" min="10" max="1000" value="150">
+    <button id="theme-toggle-btn">🌗 Theme</button>
+    <button id="export-btn">Export</button>
+    <button id="import-btn">Import</button>
+  </section>
+
+  <main>
+    <div id="grid"></div>
+  </main>
+  
+  <div id="import-modal" style="display:none;">
+    <textarea id="import-data"></textarea>
+    <button id="close-import-btn">Close</button>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+:root {
+  --cell-size: 24px;
+  --grid-gap: 2px;
+  --grid-bg: #1ed6e7;
+  --wall-color: #0bb6b0;
+  --start-color: #289ce0;
+  --end-color: #a9f914;
+  --visited-color: #ff33ee;
+  --path-color: #8cec0e;
+  --empty-color: #7addea;
+  --header-bg: #11e4a1da;
+  --header-color: #eca707;
+  --controls-bg: #ead322;
+  --controls-color: #d61313;
+}
+
+body {
+  background: var(--grid-bg);
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--controls-color);
+  transition: background 0.3s;
+}
+
+header {
+  background: var(--header-bg);
+  color: var(--header-color);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  background: var(--controls-bg);
+  padding: 16px 0;
+}
+
+#controls label,
+#controls select,
+#controls input,
+#controls button {
+  font-size: 1rem;
+  margin: 0 2px;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(40, var(--cell-size));
+  grid-template-rows: repeat(20, var(--cell-size));
+  gap: var(--grid-gap);
+  background: var(--grid-bg);
+  margin: 24px auto;
+  width: calc(40 * var(--cell-size) + 39 * var(--grid-gap));
+  box-shadow: 0 2px 16px rgba(12, 213, 136, 0.283);
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background: var(--empty-color);
+  border-radius: 3px;
+  box-sizing: border-box;
+  border: 1px solid #dedede;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.wall { background: var(--wall-color); }
+.start { background: var(--start-color); }
+.end { background: var(--end-color); }
+.visited { background: var(--visited-color); }
+.path { background: var(--path-color); }
+
+#controls button {
+  background: #32557f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#controls button:hover {
+  background: #20364f;
+}
+
+#theme-toggle-btn {
+  font-size: 1.3em;
+  padding: 3px 11px;
+  background: #222;
+  color: #ffe066;
+}
+
+#import-modal {
+  position: fixed;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: #f8f8fa;
+  border: 2px solid #32557f;
+  padding: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.19);
+  border-radius: 12px;
+}
+
+#import-modal textarea {
+  width: 260px;
+  height: 80px;
+  resize: vertical;
+}
+
+#import-modal button {
+  margin-top: 12px;
+}
+
+/* Dark Theme */
+body.dark {
+  --grid-bg: #1e2630;
+  --controls-bg: #273040;
+  --empty-color: #232b36;
+  --header-bg: #11171f;
+  --header-color: #ffe066;
+  --controls-color: #ffe066;
+  color: var(--controls-color);
+}
+/*FINISH*/ 
